@@ -40,32 +40,24 @@ use yii\helpers\Url;
           <li class="nav-item">
             <a href="<?=Url::to(['dashboard/index'])?>" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
-              <p> Walk In Transaction </p>
+              <p> Customers </p>
             </a>
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="<?=Url::to(['dashboard/paid'])?>" class="nav-link">
+            <a href="<?=Url::to(['dashboard/order'])?>" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
-              <p> List of Paid Orders </p>
+              <p> Orders</p>
             </a>
           </li>
           
           <li class="nav-item">
-            <a href="<?=Url::to(['dashboard/unpaid'])?>" class="nav-link">
+            <a href="<?=Url::to(['dashboard/payment'])?>" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
-              <p> List of Unpaid Orders </p>
+              <p> Payments </p>
             </a>
           </li>
           
-          <li class="nav-item">
-            <a href="<?=Url::to(['dashboard/complaints'])?>" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p> Complaints</p>
-            </a>
-          </li>
-
-         
 
           <li class="nav-item">
             <a href="lockscreen.php" class="nav-link">

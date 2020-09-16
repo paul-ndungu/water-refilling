@@ -17,22 +17,18 @@ class DashboardController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('walk_in_transaction');
+        return $this->render('customer');
     }
     
-    public function actionPaid()
+    public function actionOrder()
     {
-        return $this->render('paid_order');
+        return $this->render('order');
     }
     
-    public function actionUnpaid()
+    public function actionPayment()
     {
-        return $this->render('unpaid_order');
+        return $this->render('payment');
     }
     
-    public function actionComplaints()
-    {
-        return $this->render('complaints');
-    }
 
 }
