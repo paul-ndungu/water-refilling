@@ -20,9 +20,6 @@ use yii\helpers\Url;
         <div class="image">
           <img src="<?=Yii::$app->request->baseUrl;?>/img/avatar04.png" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-          <a href="#" class="d-block">Admin</a>
-        </div>
       </div>
 
       <!-- Sidebar Menu -->
@@ -62,7 +59,6 @@ use yii\helpers\Url;
           <li class="nav-item">
             <a href="lockscreen.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
-              <p> LOGOUT </p>
             </a>
           </li>
       </nav>

@@ -4,23 +4,21 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Payments */
+/* @var $model frontend\models\Customer */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="payments-form">
+<div class="customer-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'orderId')->textInput() ?>
+    <?= $form->field($model, 'fullName')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'customerId')->textInput() ?>
+    <?= $form->field($model, 'phone')->textInput() ?>
 
-    <?= $form->field($model, 'amount')->textInput() ?>
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date')->textInput() ?>
-
-    <?= $form->field($model, 'paymentTypeId')->textInput() ?>
+    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'createdAt')->textInput() ?>
 

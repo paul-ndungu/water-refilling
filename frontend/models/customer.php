@@ -1,11 +1,11 @@
 <?php
 
-namespace frontend\models;
+namespace app\models;
 
 use Yii;
 
 /**
- * This is the model class for table "cutomer".
+ * This is the model class for table "customer".
  *
  * @property int $customerId
  * @property string $fullName
@@ -17,14 +17,14 @@ use Yii;
  * @property Order[] $orders
  * @property Payments[] $payments
  */
-class Cutomer extends \yii\db\ActiveRecord
+class customer extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'cutomer';
+        return 'customer';
     }
 
     /**

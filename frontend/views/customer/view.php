@@ -4,20 +4,20 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Payments */
+/* @var $model frontend\models\Customer */
 
-$this->title = $model->paymentId;
-$this->params['breadcrumbs'][] = ['label' => 'Payments', 'url' => ['index']];
+$this->title = $model->customerId;
+$this->params['breadcrumbs'][] = ['label' => 'Customers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="payments-view">
+<div class="customer-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->paymentId], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->paymentId], [
+        <?= Html::a('Update', ['update', 'id' => $model->customerId], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->customerId], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,12 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'paymentId',
-            'orderId',
             'customerId',
-            'amount',
-            'date',
-            'paymentTypeId',
+            'fullName',
+            'phone',
+            'email:email',
+            'address',
             'createdAt',
         ],
     ]) ?>

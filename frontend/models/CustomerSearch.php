@@ -4,12 +4,12 @@ namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Payments;
+use frontend\models\Customer;
 
 /**
- * PaymentsSearch represents the model behind the search form of `frontend\models\Payments`.
+ * CustomerSearch represents the model behind the search form of `frontend\models\Customer`.
  */
-class PaymentsSearch extends Payments
+class CustomerSearch extends Customer
 {
     /**
      * {@inheritdoc}
@@ -17,9 +17,8 @@ class PaymentsSearch extends Payments
     public function rules()
     {
         return [
-            [['paymentId', 'orderId', 'customerId', 'paymentTypeId'], 'integer'],
-            [['amount'], 'number'],
-            [['date', 'createdAt'], 'safe'],
+            [['customerId', 'phone'], 'integer'],
+            [['fullName', 'email', 'address', 'createdAt'], 'safe'],
         ];
     }
 
@@ -41,7 +40,7 @@ class PaymentsSearch extends Payments
      */
     public function search($params)
     {
-        $query = Payments::find();
+        $query = Customer::find();
 
         // add conditions that should always apply here
 
@@ -59,14 +58,14 @@ class PaymentsSearch extends Payments
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'paymentId' => $this->paymentId,
-            'orderId' => $this->orderId,
             'customerId' => $this->customerId,
-            'amount' => $this->amount,
-            'date' => $this->date,
-            'paymentTypeId' => $this->paymentTypeId,
+            'phone' => $this->phone,
             'createdAt' => $this->createdAt,
         ]);
+
+        $query->andFilterWhere(['like', 'fullName', $this->fullName])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'address', $this->address]);
 
         return $dataProvider;
     }
